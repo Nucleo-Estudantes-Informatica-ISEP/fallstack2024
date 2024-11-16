@@ -6,8 +6,11 @@ export async function getStudent(code: string) {
       code: code,
     },
     include: {
-      user: true,
-      interests: true,
+      user: {
+        include: {
+          interests: true,
+        },
+      },
     },
   });
 }

@@ -18,23 +18,23 @@ model User {
   savedStudents       SavedStudent[]
   passwordResetTokens PasswordResetToken[]
 
-  student Student?
-  company Company?
+  student   Student?
+  company   Company?
+  interests Interest[]
 }
 
 model Student {
-  id        Int            @id @default(autoincrement())
-  user      User           @relation(fields: [userId], references: [id])
-  code      String         @unique
-  name      String
-  bio       String?        @db.VarChar(300)
-  year      String
-  interests Interest[]
-  saves     SavedStudent[]
-  cv        String?
-  linkedin  String?
-  github    String?
-  avatar    String?        @map("image")
+  id       Int            @id @default(autoincrement())
+  user     User           @relation(fields: [userId], references: [id])
+  code     String         @unique
+  name     String
+  bio      String?        @db.VarChar(300)
+  year     String
+  saves    SavedStudent[]
+  cv       String?
+  linkedin String?
+  github   String?
+  avatar   String?        @map("image")
 
   userId Int @unique
 }
@@ -50,8 +50,9 @@ model Company {
 }
 
 model Interest {
-  name       String    @id
-  interestOf Student[]
+  name   String @id
+  User   User?  @relation(fields: [userId], references: [id])
+  userId Int?
 }
 
 model SavedStudent {

@@ -26,6 +26,8 @@ const Dashboard: React.FC = async () => {
         globalStats={globalStats}
         totalStudents={totalStudents}
         history={history instanceof HttpError ? [] : history}
+        interests={session.interests.map((interest) => interest.name)}
+        userId={session.id}
       />
     </section>
   );

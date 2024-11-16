@@ -69,7 +69,7 @@ const InterestSelector: React.FC<InterestSelectorProps> = ({
                   userInterests.filter((i) => i !== interest.name)
                 )
               }
-              className="absolute -right-1 -top-1 z-20 flex h-4 w-4 items-center justify-center rounded-full bg-red-400/80 text-xs  text-white"
+              className="absolute -right-1 -top-1 z-20 flex size-4 items-center justify-center rounded-full bg-red-400/80 text-xs  text-white"
             >
               X
             </button>

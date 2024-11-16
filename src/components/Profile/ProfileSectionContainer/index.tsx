@@ -44,7 +44,7 @@ const ProfileSectionContainer: React.FC<ProfileSectionContainerProps> = ({
   });
 
   return (
-    <div className="h-full w-full items-center justify-center md:mb-12">
+    <div className="size-full items-center justify-center md:mb-12">
       <div
         className={`flex w-full flex-col items-center ${
           activeTab === "Definições" ? "pt-12" : "pt-4"
@@ -77,7 +77,7 @@ const ProfileSectionContainer: React.FC<ProfileSectionContainerProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="h-10 w-10 md:h-8 md:w-8" />
+                <Github className="size-10 md:size-8" />
               </a>
             )}
             {profile.linkedin && (
@@ -86,7 +86,7 @@ const ProfileSectionContainer: React.FC<ProfileSectionContainerProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="h-10 w-10 md:h-8 md:w-8" />
+                <Linkedin className="size-10 md:size-8" />
               </a>
             )}
           </p>
@@ -100,8 +100,8 @@ const ProfileSectionContainer: React.FC<ProfileSectionContainerProps> = ({
                 activeTab === "Sumário"
                   ? 0
                   : activeTab === "Perfil"
-                  ? "168%"
-                  : "336%",
+                    ? "168%"
+                    : "336%",
             }}
             initial={"165%"}
           ></motion.div>

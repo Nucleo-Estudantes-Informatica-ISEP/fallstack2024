@@ -24,7 +24,8 @@ const prismaClientSingleton = () => {
               include: {
                 company: true,
                 savedStudents: true,
-                student: { include: { interests: true } },
+                interests: true,
+                student: true,
               },
             });
             if (!user) return null;

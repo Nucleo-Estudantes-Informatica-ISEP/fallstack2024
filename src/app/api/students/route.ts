@@ -51,9 +51,6 @@ export async function POST(req: Request) {
       data: {
         name: name,
         bio: bio?.trim(),
-        interests: {
-          connect: interests.map((interest) => ({ name: interest })),
-        },
         code: code,
         user: {
           connect: {
@@ -61,6 +58,16 @@ export async function POST(req: Request) {
           },
         },
         year: year,
+      },
+    });
+
+    // update interests
+    await prisma.user.update({
+      where: { id: userId },
+      data: {
+        interests: {
+          connect: interests.map((interest) => ({ name: interest })),
+        },
       },
     });
 

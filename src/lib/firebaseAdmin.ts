@@ -51,6 +51,9 @@ export const storage =
         bucket: () => ({
           file: () => ({
             getSignedUrl: () => ["http://localhost:3000/mock-signed-url"],
+            makePublic: () => [{ bucket: "bucket", object: "object" }],
+            move: () => {},
+            exists: () => [true],
           }),
         }),
       }

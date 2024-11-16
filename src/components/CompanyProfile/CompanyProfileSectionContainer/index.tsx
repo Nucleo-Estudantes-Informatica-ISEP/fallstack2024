@@ -15,18 +15,20 @@ interface CompanyProfileSectionContainerProps {
   globalStats: number[];
   totalStudents: number;
   history: SavedStudentWithSavedBy[];
+  interests: string[];
+  userId: number;
 }
 
 const CompanyProfileSectionContainer: React.FC<
   CompanyProfileSectionContainerProps
-> = ({ company, globalStats, totalStudents, history }) => {
+> = ({ company, globalStats, totalStudents, history, interests, userId }) => {
   const [activeTab, setActiveTab] = useState<"Sumário" | "Perfis Salvos">(
     "Sumário"
   );
   return (
-    <div className="h-full w-full items-center justify-center bg-company-secondary md:mb-12">
+    <div className="size-full items-center justify-center bg-company-secondary md:mb-12">
       <div
-        className={`mb-12 flex h-full w-full flex-col items-center bg-company pt-4`}
+        className={`mb-12 flex size-full flex-col items-center bg-company pt-4`}
       >
         <motion.div
           animate={{}}
@@ -45,8 +47,8 @@ const CompanyProfileSectionContainer: React.FC<
                 activeTab === "Sumário"
                   ? 0
                   : activeTab === "Perfis Salvos"
-                  ? "337%"
-                  : 0,
+                    ? "337%"
+                    : 0,
             }}
             initial={"165%"}
           ></motion.div>
@@ -77,6 +79,8 @@ const CompanyProfileSectionContainer: React.FC<
             stats={globalStats}
             students={totalStudents}
             history={history}
+            interests={interests}
+            userId={userId}
           />
         )}
         {activeTab === "Perfis Salvos" && (

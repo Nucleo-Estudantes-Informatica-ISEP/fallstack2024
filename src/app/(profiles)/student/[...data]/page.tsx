@@ -54,7 +54,9 @@ const StudentPage: React.FC<ProfileProps> = async ({ params }) => {
   // companies may access if they saved the profile
   if (session.company && !isSavedStudent && !isPreview) return Custom404();
 
-  const sanitizedInterests = student.interests.map((interest) => interest.name);
+  const sanitizedInterests = student.user.interests.map(
+    (interest) => interest.name
+  );
 
   const globalStats = await getStats(student.code);
   const todayStats = await getTodayStats(student.id);
