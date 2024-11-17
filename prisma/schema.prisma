@@ -29,8 +29,7 @@ model Action {
   description String
   points      Int
 
-  Student   Student? @relation(fields: [studentId], references: [id])
-  studentId Int?
+  Students Student[]
 }
 
 model Talk {
@@ -38,10 +37,10 @@ model Talk {
   startTime DateTime
   isLive    Boolean  @default(false)
 
-  company     Company  @relation(fields: [companyName], references: [name])
-  companyName String   @unique
-  Student     Student? @relation(fields: [studentId], references: [id])
-  studentId   Int?
+  company     Company @relation(fields: [companyName], references: [name])
+  companyName String  @unique
+
+  Students Student[]
 }
 
 model Student {
@@ -74,9 +73,9 @@ model Company {
 }
 
 model Interest {
-  name   String @id
-  User   User?  @relation(fields: [userId], references: [id])
-  userId Int?
+  name String @id
+
+  Users User[]
 }
 
 model SavedStudent {
