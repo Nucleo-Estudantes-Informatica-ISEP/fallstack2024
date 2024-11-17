@@ -40,7 +40,7 @@ const Footer: FunctionComponent<FooterProps> = ({
     <footer className="w-full text-center">
       <div className="flex justify-center drop-shadow-lg hover:drop-shadow-xl lg:m-8">
         <a href={lastEditionUrl} target="_blank" rel="noreferrer">
-          <div className="my-6 rounded-2xl bg-secondary/40 px-8 py-4 font-poppins text-2xl font-bold transition-all duration-300 hover:scale-105 lg:text-4xl">
+          <div className="my-6 rounded-2xl bg-secondary/40 px-8 py-4  text-2xl font-bold transition-all duration-300 hover:scale-105 lg:text-4xl">
             Edição Anterior
           </div>
         </a>

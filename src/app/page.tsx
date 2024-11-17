@@ -25,13 +25,13 @@ const App: FunctionComponent = () => {
             white: LogoWhite,
             dark: LogoDark,
           }}
-          logoAlt="Logo principal do evento Fall-Stack 2023"
+          logoAlt="Logo principal do evento Fall-Stack 2024"
           contentRef={contentRef}
         />
         <Content contentRef={contentRef} />
         <HeadsUp />
         <Footer
-          lastEditionUrl="https://fallstack2022.nei-isep.org/"
+          lastEditionUrl="https://fallstack2023.nei-isep.org/"
           neiLogoSrc={{
             white: NeiLogoWhite,
             dark: NeiLogoBlack,

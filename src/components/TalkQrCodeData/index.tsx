@@ -30,7 +30,7 @@ const TalkQrCodeData: React.FC<TalkQrCodeDataProps> = ({ name }) => {
     return () => clearInterval(interval);
   }, [name]);
 
-  return <div>{qrCodeData && <QRCode size={480} value={qrCodeData} />}</div>;
+  return <div>{qrCodeData && <QRCode size={520} value={qrCodeData} />}</div>;
 };
 
 export default TalkQrCodeData;

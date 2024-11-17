@@ -20,7 +20,7 @@ const InfoText: React.FC<InfoTextProps> = ({
 }) => {
   return (
     <>
-      <HeadingText text="Fallstack" />
+      <HeadingText text="#FallStack2024" />
       <div className="mb-24 flex flex-col text-xl lg:flex-row">
         <EventInfos
           days={days}
@@ -41,7 +41,7 @@ const InfoText: React.FC<InfoTextProps> = ({
           viewport={{
             once: true,
           }}
-          className="flex flex-col space-y-2 text-center leading-7 md:text-left md:text-2xl md:leading-8 lg:px-10"
+          className="flex flex-col space-y-2 text-center leading-7 md:text-left md:text-xl md:leading-8 lg:px-10"
         >
           <p>
             O <span className="font-bold text-orange-600">Fallstack</span>{" "}

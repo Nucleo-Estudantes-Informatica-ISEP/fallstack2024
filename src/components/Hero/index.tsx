@@ -45,28 +45,31 @@ const Hero: FunctionComponent<HeaderProps> = ({
         viewport={{
           once: true,
         }}
-        className="flex w-full flex-col-reverse items-center justify-center gap-28 md:px-14 lg:flex-row"
+        className="flex w-full flex-col items-center justify-center gap-28 md:px-14"
       >
-        <div className="flex flex-col items-center justify-center gap-2 lg:items-start">
-          <h1 className="w-min font-poppins text-6xl font-bold max-lg:text-center md:text-8xl lg:w-fit">
-            <Highlight color="primary" tilt="left">
-              Internship
-            </Highlight>{" "}
-            Kickstart
-          </h1>
-          <h2 className="font-poppins text-3xl font-medium max-sm:text-center md:text-5xl lg:text-7xl">
-            Your{" "}
-            <Highlight color="accent" tilt="right">
-              future
-            </Highlight>{" "}
-            starts here
-          </h2>
-        </div>
         <Image
-          className="mt-12 max-h-[440px] w-1/2 object-contain drop-shadow-md md:mt-0 lg:max-h-[580px] lg:w-1/4"
+          className="mt-12 max-h-[300px] w-1/3 object-contain drop-shadow-md md:mt-0 lg:max-h-[500px] lg:w-72"
           src={mounted && theme === "light" ? logoSrc.dark : logoSrc.white}
           alt={logoAlt}
         />
+        <motion.div
+          initial={{
+            opacity: 0,
+            marginTop: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            marginTop: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="flex w-full flex-col items-center justify-center gap-10 md:px-5 pb-10"
+        >
+          <p className="text-4xl text-center">O teu futuro <br/><span className="font-bold">começa aqui.</span></p>
+
+          <a href="/signup" className="bg-[#606C38] py-3 px-5 rounded-md font-bold uppercase">Inscreve-te no Fallstack</a>
+        </motion.div>
       </motion.div>
       <a
         className="absolute bottom-6 flex animate-bounce cursor-pointer items-center justify-center text-center transition-all duration-200 hover:scale-105"

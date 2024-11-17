@@ -8,6 +8,7 @@ interface ActivityProps {
   logo: StaticImageData;
   title: string;
   day: number;
+  location?: string;
   children?: React.ReactNode;
   imageOrientation?: "left" | "right";
 }
@@ -16,16 +17,15 @@ const Activity: FunctionComponent<ActivityProps> = ({
   logo,
   title,
   day,
+  location = "Auditório Magno (Edifício A) do ISEP",
   children,
-  imageOrientation,
 }) => {
-  imageOrientation = imageOrientation || "left";
 
   return (
     <motion.section
       initial={{
         opacity: 0,
-        x: imageOrientation === "left" ? -40 : 40,
+        x: 40,
       }}
       whileInView={{
         opacity: 1,
@@ -34,21 +34,20 @@ const Activity: FunctionComponent<ActivityProps> = ({
       viewport={{
         once: true,
       }}
-      className="my-12 grid w-full grid-cols-1 grid-rows-[1fr_3fr_3fr] items-center justify-center gap-8 lg:grid-cols-2 lg:grid-rows-[1fr_4fr]"
+      className="my-12 flex flex-col items-left justify-center"
     >
-      <h5 className="w-full text-center font-poppins text-4xl font-bold md:text-left md:text-5xl lg:col-span-2">
-        Dia {day} - {title}
-      </h5>
-      <div className="mx-auto w-full text-center text-xl leading-7 md:text-justify md:leading-8 lg:text-2xl">
-        {children}
+      <div className="flex flex-col space-y-5">
+        <h5 className="w-full text-center  text-4xl font-bold md:text-left md:text-5xl lg:col-span-2">
+          Dia {day} - {title}
+        </h5>
+        <p className="mt-5 text-2xl">{location}</p>
       </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 items-center ">
+        <div className="mx-auto w-full text-center text-xl leading-7 md:text-justify md:leading-8 lg:text-2xl">
+          {children}
+        </div>
 
-      <div
-        id="w-full"
-        className={`row-start-2 ${
-          imageOrientation === "right" ? "lg:col-start-2" : "lg:col-start-1"
-        }`}
-      >
         <Image
           src={logo}
           alt={`Atividade ${title}`}

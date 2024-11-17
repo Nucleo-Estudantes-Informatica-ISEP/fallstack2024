@@ -1,11 +1,9 @@
 import Connect from "../../../public/assets/images/connect.png";
 import Pitch from "../../../public/assets/images/pitch.png";
-import { ScheduleDays } from "../../utils/ScheduleDays";
 import Activity from "../Activity";
 import CompaniesSection from "../Companies/CompaniesSection";
 import FaqSection from "../FaqSection";
 import InfoText from "../InfoText";
-import Schedule from "../Schedule";
 import SponsorsSection from "../SponsorsSection";
 
 interface ContentProps {
@@ -19,14 +17,14 @@ const Content: React.FC<ContentProps> = ({ contentRef }) => {
       className="container mx-auto rounded-lg p-8 sm:w-3/4 lg:w-full lg:pt-14"
     >
       <InfoText
-        days={[28, 29]}
+        days={[26, 27]}
         month="Novembro"
         beginningTime="9h00"
         endTime="17:30h"
       />
 
       <section className="my-16 grid w-full grid-cols-1 justify-items-center gap-y-10 md:grid-rows-2 md:gap-y-14">
-        <Activity logo={Pitch} title={"Pitch"} day={28}>
+        <Activity logo={Pitch} title={"Apresentações das empresas"} day={26}>
           O primeiro dia é dedicado aos{" "}
           <span className="font-bold text-orange-600">pitches </span>
           por parte das empresas presentes no evento.
@@ -40,8 +38,8 @@ const Content: React.FC<ContentProps> = ({ contentRef }) => {
         <Activity
           logo={Connect}
           title={"Connection's Train"}
-          day={29}
-          imageOrientation="right"
+          day={27}
+          location={"Sala de Eventos (Edificio H) do ISEP"}
         >
           No segundo dia terás a oportunidade de{" "}
           <span className="font-bold text-orange-600">interagir </span>
@@ -52,12 +50,6 @@ const Content: React.FC<ContentProps> = ({ contentRef }) => {
           <span className="font-bold text-orange-600"> feedback</span> por parte
           das empresas do teu interesse.
         </Activity>
-        <hr />
-        <Schedule
-          firstDayTitle="Terça-Feira - Auditório Magno"
-          secondDayTitle="Quarta-Feira - Sala de Eventos"
-          scheduleEvents={ScheduleDays}
-        />{" "}
       </section>
 
       <CompaniesSection />

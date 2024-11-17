@@ -39,7 +39,7 @@ const CompaniesContainer: FunctionComponent<CompaniesContainerProps> = ({
       <h2
         className={`${getTierStyling(
           tier
-        )} z-0 mx-2 mb-8 text-center font-poppins text-5xl font-semibold lg:mb-4`}
+        )} z-0 mx-2 mb-8 text-center  text-5xl font-semibold lg:mb-4`}
       >
         {tier}
       </h2>

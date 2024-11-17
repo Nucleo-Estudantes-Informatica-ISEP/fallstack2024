@@ -9,7 +9,7 @@ interface HistorySectionProps {
 const HistorySection = ({ historyData, isCompany }: HistorySectionProps) => {
   return (
     <div className="mb-8 mt-12 flex w-full flex-col items-center justify-center text-black">
-      <h1 className="mx-auto mb-4 text-center font-poppins text-2xl font-extrabold uppercase text-black">
+      <h1 className="mx-auto mb-4 text-center  text-2xl font-extrabold uppercase text-black">
         Histórico de Scans
       </h1>
       <div className="flex w-full flex-row items-center justify-between border-b-2 border-black px-1 py-3 font-bold">

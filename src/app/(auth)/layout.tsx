@@ -6,7 +6,7 @@ interface AuthLayoutProps {
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
-    <div className="flex h-svh items-center justify-center px-6 font-poppins md:p-0">
+    <div className="flex h-[100svh] items-center justify-center px-6  md:p-0">
       <div className="flex max-w-4xl flex-1 flex-col items-start justify-between rounded-xl bg-white shadow-xl md:h-168 md:flex-row">
         <div className="relative h-60 w-full md:h-full">
           <Image

@@ -19,6 +19,7 @@ const getServerSession = async () => {
     if (!user) return null;
     return user;
   } catch (error) {
+    console.log("Error verifying token", error);
     return null;
   }
 };
