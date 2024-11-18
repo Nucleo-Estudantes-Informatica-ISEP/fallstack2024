@@ -58,6 +58,7 @@ model Student {
   avatar   String?        @map("image")
   talks    Talk[]
   actions  Action[]
+  interests Interest[]
 
   userId Int @unique
 }
@@ -69,6 +70,7 @@ model Company {
   tier   Tier
   avatar String? @map("image")
 
+  interests Interest[]
   userId Int    @unique
   Talk   Talk[]
 }
@@ -76,13 +78,8 @@ model Company {
 model Interest {
   name   String @id
   User   User?  @relation(fields: [userId], references: [id])
-  userId Int?
-  userId Int @unique
-  Interest Interest[]
-}
+  userId Int? @unique
 
-model Interest {
-  name       String    @id
   interestOf Student[]
   interestedIn Company[]
 }
