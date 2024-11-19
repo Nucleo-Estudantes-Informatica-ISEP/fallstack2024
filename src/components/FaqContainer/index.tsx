@@ -7,7 +7,7 @@ interface FaqContainerProps {
 }
 const FaqContainer: React.FC<FaqContainerProps> = ({ faqs }) => {
   return (
-    <div className="mx-auto flex w-[90%] flex-col md:w-5/6">
+    <div className="flex items-start flex-col">
       {faqs.map(({ question, answer }, i) => (
         <Faq key={question} index={i} question={question} answer={answer} />
       ))}
