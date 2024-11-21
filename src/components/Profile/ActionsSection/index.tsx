@@ -1,8 +1,9 @@
-import { Action } from "@/types/Action";
+import { Action } from "@prisma/client";
+
 import { CheckSquare, Square } from "@/styles/Icons";
 
 interface ActionsSectionProps {
-  actions: Action[];
+  actions: (Action & { done: boolean })[];
 }
 
 const ActionsSection: React.FC<ActionsSectionProps> = ({ actions }) => {
@@ -29,10 +30,12 @@ const ActionsSection: React.FC<ActionsSectionProps> = ({ actions }) => {
                   >
                     <div>
                       <h4 className="text-lg font-semibold text-gray-800">
-                        {action.name}
+                        {action.altText ? action.altText : action.name}
                       </h4>
                       <p className="text-sm text-gray-600">
-                        {action.description}
+                        {action.altText
+                          ? "?".repeat(action.description.length)
+                          : action.description}
                       </p>
                     </div>
                     <div className="flex flex-col items-center justify-end text-center">

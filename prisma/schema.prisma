@@ -24,10 +24,12 @@ model User {
 }
 
 model Action {
-  id          Int    @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   name        String
   description String
   points      Int
+  altText     String?
+  isRevealed  Boolean @default(false)
 
   Students Student[]
 }

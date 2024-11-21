@@ -19,8 +19,6 @@ const LoginPage: React.FC = () => {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [pwError, setPwError] = useState<string | null>(null);
 
-  if (session.user) router.push("/");
-
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 

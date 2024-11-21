@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Student, User } from "@prisma/client";
+import { Action, Student, User } from "@prisma/client";
 import { motion } from "framer-motion";
 
-import { Action } from "@/types/Action";
 import { ProfileData } from "@/types/ProfileData";
 import { SavedStudentWithSavedBy } from "@/types/SavedStudentWithSavedBy";
 import UserImage from "@/components/UserImage";
@@ -21,7 +20,7 @@ interface ProfileSectionContainerProps {
   todayStats: number;
   companiesLeft: number;
   historyData: SavedStudentWithSavedBy[];
-  actions: Action[];
+  actions: (Action & { done: boolean })[];
 }
 
 const ProfileSectionContainer: React.FC<ProfileSectionContainerProps> = ({

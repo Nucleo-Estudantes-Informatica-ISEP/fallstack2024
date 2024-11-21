@@ -167,6 +167,12 @@ async function seedActions() {
         description: "Assiste à palestra 3",
         points: 10,
       },
+      {
+        name: "Entrevista com o Teixeira",
+        description: "Assiste à palestra 3",
+        altText: "0x31r4",
+        points: 10,
+      },
     ],
   });
 

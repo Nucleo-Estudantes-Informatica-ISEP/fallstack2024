@@ -1,48 +1,52 @@
-import { Archive, Trophy, Leaf } from "@/styles/Icons";
+import { Archive, Leaf, Trophy } from "@/styles/Icons";
 
 import { CompanyProps } from "../components/Companies/Company";
 import {
+  aprLogo,
   delloiteLogo,
   DevscopeLogo,
   niwLogo,
-  aprLogo,
 } from "./CompaniesImages";
-
 
 export const GoldCompanies: CompanyProps[] = [
   {
     logoHref: aprLogo,
     name: "apr",
-    interests: [
-      "Consulting",
-    ],
+    interests: ["Cloud Computing", "Infrastructure", "Security"],
     modalInformation: {
       title: "APR",
+      linkedinLink:
+        "https://www.linkedin.com/company/apr-technology-solutions/",
+      instagramLink: "https://www.instagram.com/aprtechnologysolutions/",
+      facebookLink: "https://www.facebook.com/aprtechnologysolutions/",
       bodyText: (
         <>
           <p>
             Somos uma empresa tecnológica com mais de 30 anos de experiência,
-            parceira da Microsoft. Ao longo destas três décadas, temos liderado a
-            transformação digital de empresas em múltiplos setores, oferecendo
+            parceira da Microsoft. Ao longo destas três décadas, temos liderado
+            a transformação digital de empresas em múltiplos setores, oferecendo
             soluções inovadoras em ERP Dynamics Business Central, Systems, CRM
             Solutions e Microsoft Power Platform. Com um portfólio robusto e
-            diversificado, potenciamos o sucesso dos nossos clientes, adicionando
-            valor com otimização de processos, aumentando a eficiência das operações
-            e automatizando tarefas, sem descurar a segurança digital das organizações.
+            diversificado, potenciamos o sucesso dos nossos clientes,
+            adicionando valor com otimização de processos, aumentando a
+            eficiência das operações e automatizando tarefas, sem descurar a
+            segurança digital das organizações.
           </p>
           <br />
           <p>
-            A nossa abordagem vai além da implementação de soluções tecnológicas.
-            Na APR, também oferecemos serviços personalizados de suporte contínuo,
-            consultoria estratégica e desenvolvimento aplicacional que se ajustam às
-            necessidades específicas de cada negócio. Adotamos uma metodologia centrada
-            em cada cliente, o que nos permite responder rapidamente às mudanças do
-            mercado e antecipar as tendências emergentes, preparando as empresas para
-            o futuro digital.
+            A nossa abordagem vai além da implementação de soluções
+            tecnológicas. Na APR, também oferecemos serviços personalizados de
+            suporte contínuo, consultoria estratégica e desenvolvimento
+            aplicacional que se ajustam às necessidades específicas de cada
+            negócio. Adotamos uma metodologia centrada em cada cliente, o que
+            nos permite responder rapidamente às mudanças do mercado e antecipar
+            as tendências emergentes, preparando as empresas para o futuro
+            digital.
           </p>
         </>
       ),
     },
+    className: "w-3/4",
   },
   {
     logoHref: delloiteLogo,
@@ -64,7 +68,7 @@ export const GoldCompanies: CompanyProps[] = [
           <br />
           <p>
             Acreditamos que o impacto que criamos se multiplica quando
-            trabalhamos em equipa. Juntos podemos mudar o mundo – torná-lo mais
+            trabalhamos em equipa. Juntos podemos mudar o mundo - torná-lo mais
             humano, eficiente e tecnológico. Mas isso só é possível se
             conectarmos o teu talento ao de outras pessoas como tu.
           </p>
@@ -91,7 +95,7 @@ export const GoldCompanies: CompanyProps[] = [
           <br />
           <p>
             Se tens interesse em explorar e desenvolver as tuas competências
-            nalguma destas áreas em soluções tecnológicas – engenharia de
+            nalguma destas áreas em soluções tecnológicas - engenharia de
             software, cloud, integração de sistemas, data analytics & data
             science, cyber risk, engenharia de redes telecomunicações, UX design
             - e gostarias de trabalhar com tecnologias como AWS, Google, Oracle,
@@ -127,8 +131,6 @@ export const GoldCompanies: CompanyProps[] = [
       instagramLink: "https://www.instagram.com/deloitteportugal/",
       linkedinLink: "https://www.linkedin.com/company/deloitte-portugal/",
       website: "https://www2.deloitte.com/pt/pt.html",
-      videoHref: "https://www.youtube.com/embed/ShwtDNMJ4eM",
-      videoTitle: "Vídeo promocional",
       facts: [
         {
           iconSrc: Trophy,
@@ -165,8 +167,6 @@ export const GoldCompanies: CompanyProps[] = [
           duradouros.
         </p>
       ),
-      videoTitle: "Vídeo promocional",
-      videoHref: "https://www.youtube.com/embed/WL1pRbjUs6c",
       facebookLink: "https://www.facebook.com/devscope/",
       youtubeLink: "https://www.youtube.com/devscope",
       twitterLink: "https://twitter.com/devscope",
@@ -196,22 +196,28 @@ export const GoldCompanies: CompanyProps[] = [
     logoHref: niwLogo,
     name: "niw",
     interests: [
-      "Consulting",
+      "Infrastructure",
+      "Devops",
+      "Artificial Intelligence",
+      "Analytics",
     ],
     modalInformation: {
       title: "NiW",
       bodyText: (
         <p>
-          NiW is a fresh chapter for a brand with a long, successful history, Rigor.
-          For many decades, Rigor has been the trusted consultant for all brands within
-          Grupo Salvador Caetano. Despite offering support in a variety of areas, IT has
-          always been our passion. It moves us and keeps us evolving and new. That's why
-          now Rigor is NiW, your new IT partner, offering solutions, support and monitoring
-          that switches your business to the winning side.
+          NiW is a fresh chapter for a brand with a long, successful history,
+          Rigor. For many decades, Rigor has been the trusted consultant for all
+          brands within Grupo Salvador Caetano. Despite offering support in a
+          variety of areas, IT has always been our passion. It moves us and
+          keeps us evolving and new. That&apos;s why now Rigor is NiW, your new
+          IT partner, offering solutions, support and monitoring that switches
+          your business to the winning side.
         </p>
       ),
-      linkedinLink: "https://www.linkedin.com/company/niw-it-services-consulting/",
+      linkedinLink:
+        "https://www.linkedin.com/company/niw-it-services-consulting/",
       website: "https://www.niw.pt/",
     },
+    className: "w-3/4",
   },
 ];

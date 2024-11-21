@@ -13,7 +13,6 @@ import { InstallableContextProvider } from "@/contexts/InstallableContext";
 import InstallPopUp from "@/components/InstallPopUp";
 import Topbar from "@/components/TopBar";
 
-
 export const metadata: Metadata = {
   applicationName: "Fallstack 2024",
   title: "Fallstack 2024",

@@ -1,7 +1,6 @@
-import { Student, User } from "@prisma/client";
+import { Action, Student, User } from "@prisma/client";
 import Skeleton from "react-loading-skeleton";
 
-import { Action } from "@/types/Action";
 import { ProfileData } from "@/types/ProfileData";
 
 import ActionsSection from "../ActionsSection";
@@ -13,7 +12,7 @@ interface ProfileSectionProps {
   student: Student & { user: User };
   interests: string[];
   profile: ProfileData;
-  actions: Action[];
+  actions: (Action & { done: boolean })[];
 }
 
 const ProfileSection: React.FC<ProfileSectionProps> = ({

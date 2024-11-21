@@ -49,7 +49,7 @@ const Footer: FunctionComponent<FooterProps> = ({
         <hr className="mx-auto my-4 h-1 w-11/12 border-0 bg-text"></hr>
       </div>
       <div className="justify-between lg:flex lg:pb-6">
-        <h4 className="right-10 select-none pb-3 drop-shadow-xl font-light sm:text-center lg:pb-0 lg:pl-20">
+        <h4 className="right-10 select-none pb-3 font-light drop-shadow-xl sm:text-center lg:pb-0 lg:pl-20">
           Copyright &copy; {currentYear} NEI-ISEP. All rights reserved.
         </h4>
         <div className="mb-8 flex justify-between px-5 md:items-center md:gap-x-5 md:px-0 lg:pr-20">
