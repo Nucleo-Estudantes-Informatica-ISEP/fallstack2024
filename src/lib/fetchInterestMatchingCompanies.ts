@@ -1,6 +1,6 @@
 import { Company, Interest } from "@prisma/client";
 
-import prisma from "../prisma";
+import prisma from "./prisma";
 
 export async function fetchInterestMatchingCompanies(
   userId: string
@@ -23,6 +23,10 @@ export async function fetchInterestMatchingCompanies(
         },
       },
     },
+    select: {
+      id: true,
+      name: true,
+    },
   });
 
   return companies
@@ -30,6 +34,8 @@ export async function fetchInterestMatchingCompanies(
       const matchingInterests = company.user.interests.filter((interest) =>
         userInterests.some((userInterest) => userInterest.id === interest.id)
       );
+
+      console.log(company.name, matchingInterests);
 
       return {
         company,

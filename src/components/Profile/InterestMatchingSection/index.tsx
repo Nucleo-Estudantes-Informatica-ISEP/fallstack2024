@@ -22,7 +22,11 @@ const InterestMatchingSection: React.FC<InterestMatchingSectionProps> = ({
         return;
       }
 
-      const { companies: interestingCompanies } = await data.json();
+      console.log(data);
+
+      const interestingCompanies = await data.json();
+
+      console.log(interestingCompanies);
       setCompanies(interestingCompanies);
     }
 
@@ -56,14 +60,18 @@ const InterestMatchingSection: React.FC<InterestMatchingSectionProps> = ({
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-medium text-gray-900">
-                  {company.name}
+                  {company.name
+                    .toLowerCase()
+                    .replace(/\b\w/g, (c) => c.toUpperCase())}
                 </h3>
                 <p className="text-sm text-gray-600">
-                  Matching Interests:{" "}
+                  Interesses em comum:{" "}
                   <span className="font-semibold text-gray-800">
-                    {matchingInterests
-                      .map((interest) => interest.name)
-                      .join(", ")}
+                    {matchingInterests.length > 0
+                      ? matchingInterests
+                          .map((interest) => interest.name)
+                          .join(", ")
+                      : "N/a"}
                   </span>
                 </p>
               </div>
