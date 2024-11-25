@@ -102,7 +102,7 @@ export async function POST(req: Request) {
       const [meta] = await storage.bucket().file(distribution).makePublic();
 
       const { bucket, object } = meta;
-      avatarUrl = `https://${bucket}.storage.googleapis.com/${object}`;
+      avatarUrl = `https://storage.googleapis.com/${bucket}/${object}`;
     }
 
     if (cv) {
