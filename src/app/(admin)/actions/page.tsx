@@ -13,18 +13,17 @@ const actions: React.FC = async () => {
   const actions = await fetchActions();
 
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-center px-8 py-24 md:px-24">
-      <div className="overflow-x-auto rounded-lg bg-white shadow-md">
-        <table className="min-w-full table-auto border-collapse">
+    <section className="flex min-h-screen w-full flex-col items-center justify-center">
+      <div className="overflow-x-scroll rounded-lg bg-white shadow-md">
+        <table className="w-full table-auto border-collapse overflow-x-scroll">
           <thead className="bg-gray-200 text-sm uppercase text-gray-700">
             <tr>
-              <th className="px-6 py-3 text-left">Id</th>
-              <th className="px-6 py-3 text-left">Name</th>
-              <th className="px-6 py-3 text-left">Points</th>
-              <th className="px-6 py-3 text-left">Alt Text</th>
-              <th className="px-6 py-3 text-left">Live</th>
-              <th className="px-6 py-3 text-left">Visible</th>
-              <th className="px-6 py-3 text-left">Action</th>
+              <th className="px-2 py-3 text-left">Name</th>
+              <th className="px-2 py-3 text-left">Points</th>
+              <th className="px-2 py-3 text-left">Alt Text</th>
+              <th className="px-2 py-3 text-left">Live</th>
+              <th className="px-2 py-3 text-left">Visible</th>
+              <th className="px-2 py-3 text-left">Action</th>
             </tr>
           </thead>
           <tbody className="text-base text-gray-600">
@@ -33,13 +32,12 @@ const actions: React.FC = async () => {
                 key={action.id}
                 className="border-b transition-colors hover:bg-gray-100"
               >
-                <td className="px-6 py-4">{action.id}</td>
-                <td className="px-6 py-4">{action.name}</td>
-                <td className="px-6 py-4">{action.points}</td>
-                <td className="px-6 py-4">{action.altText || "N/A"}</td>
-                <td className="px-6 py-4">{action.isLive ? "Yes" : "No"}</td>
-                <td className="px-6 py-4">{action.isVisible ? "Yes" : "No"}</td>
-                <td className="px-6 py-4">
+                <td className="px-2 py-4">{action.name}</td>
+                <td className="px-2 py-4">{action.points}</td>
+                <td className="px-2 py-4">{action.altText || "N/A"}</td>
+                <td className="px-2 py-4">{action.isLive ? "Yes" : "No"}</td>
+                <td className="px-2 py-4">{action.isVisible ? "Yes" : "No"}</td>
+                <td className="px-2 py-4">
                   <Link
                     href={`/actions/${action.id}`}
                     className="text-blue-500 hover:underline"

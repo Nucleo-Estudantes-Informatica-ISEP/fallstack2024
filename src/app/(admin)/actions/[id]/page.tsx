@@ -23,7 +23,9 @@ const Actions: React.FC<ActionParams> = async ({ params }) => {
 
   return (
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center px-8 py-24 md:px-24">
-      <h1 className="mb-12 text-6xl font-bold text-primary">{action.name}</h1>
+      <h1 className="mb-12 text-3xl font-bold text-primary lg:text-6xl">
+        {action.name}
+      </h1>
       <CloseActionButton id={id} action={action} />
       <ActionQrCodeData id={id} />
     </section>

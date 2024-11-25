@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import useWindowSize from "@rooks/use-window-size";
 import QRCode from "qrcode.react";
 
 import config from "@/config";
@@ -12,6 +13,7 @@ interface ActionQrCodeDataProps {
 
 const ActionQrCodeData: React.FC<ActionQrCodeDataProps> = ({ id }) => {
   const [qrCodeData, setQrCodeData] = useState<string | null>(null);
+  const { innerWidth } = useWindowSize();
 
   useEffect(() => {
     const fetchQrCodeData = async () => {
@@ -30,7 +32,13 @@ const ActionQrCodeData: React.FC<ActionQrCodeDataProps> = ({ id }) => {
     return () => clearInterval(interval);
   }, [id]);
 
-  return <div>{qrCodeData && <QRCode size={520} value={qrCodeData} />}</div>;
+  return (
+    <div>
+      {qrCodeData && (
+        <QRCode size={innerWidth ? innerWidth / 2 : 320} value={qrCodeData} />
+      )}
+    </div>
+  );
 };
 
 export default ActionQrCodeData;

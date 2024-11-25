@@ -29,7 +29,6 @@ export async function GET(req: NextRequest, props: ActionParams) {
       { id, timestamp },
       { expiresIn: config.constants.actionQrCodeRefreshRateMs * 2 }
     );
-  console.log({ qrCode });
 
   return NextResponse.json({ action, qrCode });
 }
