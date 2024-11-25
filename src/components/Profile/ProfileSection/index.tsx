@@ -5,6 +5,7 @@ import { ProfileData } from "@/types/ProfileData";
 
 import ActionsSection from "../ActionsSection";
 import BioSection from "../BioSection";
+import InterestMatchingSection from "../InterestMatchingSection";
 import InterestsSection from "../InterestsSection";
 import OpenCvSection from "../OpenCvSection";
 
@@ -54,6 +55,8 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({
       )}
 
       <ActionsSection actions={actions} />
+
+      <InterestMatchingSection userId={student.userId} />
     </section>
   );
 };
