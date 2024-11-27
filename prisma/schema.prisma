@@ -20,6 +20,7 @@ model User {
 
   student   Student?
   company   Company?
+  feedback Feedback?
   interests Interest[] @relation(fields: [interestId], references: [id])
 
   interestId String[] @db.ObjectId
@@ -104,6 +105,14 @@ model PasswordResetToken {
   user User @relation(fields: [userId], references: [id])
 
   userId String @db.ObjectId
+}
+
+model Feedback {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  createdAt DateTime @default(now())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 enum Role {
